@@ -3,10 +3,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Limite"
+        xmlns:views="clr-namespace:Limite.Views" xmlns:limite="clr-namespace:Limite" d:DataContext="{d:DesignInstance Type=limite:MainContentViewModel}"
         mc:Ignorable="d"
+        xmlns:vm="clr-namespace:Limite.ViewModels"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <DockPanel>
+        <views:MainSideBar x:Name="mainSideBar" SelectedTheme="{Binding ElementName=mainSideBar, Path=Themes[0]}" DockPanel.Dock="Left" OpenPageCommand="{Binding OpenPageCommand}">
+            <views:MainSideBar.Themes>
+                <vm:ThemeViewModel Name="Светлая" Uri="Resources/LightColors.xaml"></vm:ThemeViewModel>
+                <vm:ThemeViewModel Name="Тёмная" Uri="Resources/DarkColors.xaml"></vm:ThemeViewModel>
+            </views:MainSideBar.Themes>
+        </views:MainSideBar>
+        <Frame Background="{DynamicResource PrimaryBackgroundColor}" Content="{Binding Content}" x:Name="ContentFrame"  NavigationUIVisibility="Hidden"/>
+    </DockPanel>
 </Window>

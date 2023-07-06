@@ -4,6 +4,53 @@
              xmlns:local="clr-namespace:Limite"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/LightColors.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+
+            <Style TargetType="ToggleButton" x:Key="BaseToggleButtonStyle">
+                <Setter Property="Background" Value="{DynamicResource PrimaryBackgroundColor}"/>
+                <Setter Property="Foreground" Value="{DynamicResource SecondaryForegroundColor}"/>
+            </Style>
+
+            <Style TargetType="ListView" x:Key="BaseListViewStyle">
+                <Setter Property="Background" Value="{DynamicResource SecondaryBackgroundColor}"/>
+                <Setter Property="Foreground" Value="{DynamicResource SecondaryForegroundColor}"/>
+            </Style>
+
+
+            <Style TargetType="Button" x:Key="BaseButtonStyle">
+                <Setter Property="Background" Value="{DynamicResource PrimaryBackgroundColor}"/>
+                <Setter Property="Foreground" Value="{DynamicResource SecondaryForegroundColor}"/>
+            </Style>
+
+            <Style TargetType="StackPanel" x:Key="BaseStackPanelStyle">
+                <Setter Property="Background" Value="{DynamicResource SecondaryBackgroundColor}"/>
+            </Style>
+
+            <Style TargetType="TextBlock" x:Key="BaseTextBlockStyle">
+                <Setter Property="Foreground" Value="{DynamicResource SecondaryForegroundColor}"></Setter>
+            </Style>
+
+            <Style TargetType="RadioButton" x:Key="BaseRadioButtonStyle">
+                <Setter Property="Foreground" Value="{DynamicResource SecondaryForegroundColor}"></Setter>
+                <Setter Property="Background" Value="{DynamicResource PrimaryBackgroundColor}"></Setter>
+            </Style>
+
+            <Style TargetType="DockPanel" x:Key="BaseDockPanelStyle">
+                <Setter Property="Background" Value="{DynamicResource SecondaryBackgroundColor}"/>
+            </Style>
+
+            <Style TargetType="ListView" BasedOn="{StaticResource BaseListViewStyle}"/>
+            <Style TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}"/>
+            <Style TargetType="StackPanel" BasedOn="{StaticResource BaseStackPanelStyle}"/>
+            <Style TargetType="ToggleButton" BasedOn="{StaticResource BaseToggleButtonStyle}" />
+            <Style TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlockStyle}" />
+            <Style TargetType="RadioButton" BasedOn="{StaticResource BaseRadioButtonStyle}" />
+            <Style TargetType="DockPanel" BasedOn="{StaticResource BaseDockPanelStyle}"></Style>
+            
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

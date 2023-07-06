@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Limite.Pages
+namespace Limite.Views
 {
     /// <summary>
-    /// Interaction logic for ParallelMath.xaml
+    /// Interaction logic for Page1.xaml
     /// </summary>
-    public partial class ParallelMath : Page
+    public partial class Page1 : Page
     {
-        public ParallelMath()
+        public Page1()
         {
             InitializeComponent();
         }
